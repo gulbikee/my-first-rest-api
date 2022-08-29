@@ -27,3 +27,9 @@ app.listen(3001, () => {
   app.post('/users', [
     UsersController.insert
              ]);
+  moongose.connect(process.env.DB_CONNECTION,{useNewUrlParser: true,useUnifiedTopology: true})
+  .then(result => app.listen(port))
+  .then(result=> console.log(`your server is running at http://localhost: 3001`))
+  .catch(err => console.log(err));
+  
+  
