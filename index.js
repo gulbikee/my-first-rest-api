@@ -31,5 +31,9 @@ app.listen(3001, () => {
   .then(result => app.listen(port))
   .then(result=> console.log(`your server is running at http://localhost: 3001`))
   .catch(err => console.log(err));
+  app.get('/',(req,res)=>{
+    res.send('you are home now');
+  });
+   
   
   
