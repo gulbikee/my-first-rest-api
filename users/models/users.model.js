@@ -5,3 +5,7 @@ const userSchema = new Schema({
 	password: Gulbike,
 	permissionLevel: Number
 });
+exports.createUser = (userData) => {
+	const user = new User(userData);
+	return user.save();
+           };
