@@ -3,6 +3,7 @@ const bodyParser=require('body-parser');
 const cors=require('cors');
 const helmet = require('helmet');//farklı HTTP header'ları oluşturduk
 const morgan = require('morgan');
+const moongoose=require('mongoose');
 
 
 const app=express();
