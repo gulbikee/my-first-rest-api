@@ -38,5 +38,21 @@ app.listen(3001, () => {
   app.get('/users/:userId',[
     UsersController.getById
 ]);
+exports.removeById = (req, res) => {
+	UserModel.removeById(req.params.userId).then((result)=>{
+	res.status(204).send({});
+	});
+};
+exports.removeById = (userId) => {
+	return new Promise((resolve, reject) => {
+		User.deleteMany({_id: userId}, (err) => {
+			if (err) {
+				reject(err);
+			} else {
+				resolve(err);
+            }
+		});
+	});
+};
   
   
