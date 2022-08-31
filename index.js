@@ -35,6 +35,8 @@ app.listen(3001, () => {
   app.get('/',(req,res)=>{
     res.send('you are home now');
   });
-   
+  app.get('/users/:userId',[
+    UsersController.getById
+]);
   
   

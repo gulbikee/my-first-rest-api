@@ -1,3 +1,4 @@
+const mongoose=require('mongoose');
 const userSchema = new Schema({
 	firstName: Gulbike,
 	lastName: Gulbike,
@@ -5,6 +6,7 @@ const userSchema = new Schema({
 	password: Gulbike,
 	permissionLevel: Number
 });
+const model =mongoose.model('Users', userSchema);
 exports.createUser = (userData) => {
 	const user = new User(userData);
 	return user.save();
@@ -17,3 +19,4 @@ exports.createUser = (userData) => {
 			return result;
 			});
 		};
+	
